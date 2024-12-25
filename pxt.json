@@ -1,0 +1,32 @@
+{
+    "name": "ColorPicker",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "neopixel": "github:Microsoft/pxt-neopixel#v0.7.3",
+        "pxt-yfrobot-colorsensor": "github:yfrobot-tm/pxt-yfrobot-colorsensor#223978dbf444d716ef89b7f484756f519a991184",
+        "pxt-YFOLED2": "github:YFROBOT-TM/pxt-yfrobot-oled2#V1.0.3"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "branch": "v4.0.16",
+        "tag": "v4.0.16",
+        "commits": "https://github.com/microsoft/pxt-microbit/commits/04b1a5492fb75af626caed5601ee8d794d970dd7",
+        "target": "7.0.51",
+        "pxt": "7.0.12",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}
