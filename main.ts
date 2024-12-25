@@ -13,7 +13,13 @@ function myMin (a: number, b: number) {
     }
 }
 input.onButtonPressed(Button.A, function () {
-    strip.showColor(neopixel.rgb(TCS3472X.getColorData(RGB.RED), TCS3472X.getColorData(RGB.GREEN), TCS3472X.getColorData(RGB.BLUE)))
+    r = TCS3472X.getColorData(RGB.RED)
+    g = TCS3472X.getColorData(RGB.GREEN)
+    b = TCS3472X.getColorData(RGB.BLUE)
+    rgbToHsl(r, g, b)
+    serial.writeLine("" + h + " " + s + " " + l)
+    strip.showColor(neopixel.hsl(h, s * 100, l * 100))
+    strip.show()
 })
 input.onButtonPressed(Button.B, function () {
     strip.clear()
@@ -45,20 +51,26 @@ function rgbToHsl (r: number, g: number, b: number) {
         s = delta / (1 - Math.abs(2 * l - 1))
     }
 }
-let l = 0
-let delta = 0
 let Cmin = 0
-let Cmax = 0
+let strip: neopixel.Strip = null
+let l = 0
+let h = 0
+let s = 0
 let b = 0
 let g = 0
 let r = 0
-let strip: neopixel.Strip = null
-let h = 0
-let s = 0
+let delta = 0
+let Cmax = 0
+Cmax = 0
+delta = 0
+delta = 0
+r = 0
+g = 0
+b = 0
 s = 0
 h = 0
+l = 0
 TCS3472X.LCS_initialize()
-strip = neopixel.create(DigitalPin.P1, 1, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P1, 5, NeoPixelMode.RGB)
 strip.clear()
-strip.setBrightness(100)
 strip.show()
